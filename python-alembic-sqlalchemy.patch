@@ -1,0 +1,29 @@
+--- alembic-1.6.5/tests/test_script_consumption.py.orig	2021-05-27 21:48:50.000000000 +0200
++++ alembic-1.6.5/tests/test_script_consumption.py	2024-01-18 06:19:18.916463342 +0100
+@@ -533,7 +533,7 @@ def downgrade():
+                 if self.is_sqlalchemy_future:
+                     with testing.expect_raises_message(
+                         sa.exc.InvalidRequestError,
+-                        r"a transaction is already begun for this connection",
++                        r"a transaction is already begun for this connection|This connection has already initialized a SQLAlchemy Transaction.*",
+                     ):
+                         command.upgrade(self.cfg, c)
+                 else:
+@@ -555,7 +555,7 @@ def downgrade():
+                 if self.is_sqlalchemy_future:
+                     with testing.expect_raises_message(
+                         sa.exc.InvalidRequestError,
+-                        r"a transaction is already begun for this connection",
++                        r"a transaction is already begun for this connection|This connection has already initialized a SQLAlchemy Transaction.*",
+                     ):
+                         command.upgrade(self.cfg, c)
+                 else:
+@@ -577,7 +577,7 @@ def downgrade():
+                 if self.is_sqlalchemy_future:
+                     with testing.expect_raises_message(
+                         sa.exc.InvalidRequestError,
+-                        r"a transaction is already begun for this connection",
++                        r"a transaction is already begun for this connection|This connection has already initialized a SQLAlchemy Transaction.*",
+                     ):
+                         command.upgrade(self.cfg, c)
+                 else:
