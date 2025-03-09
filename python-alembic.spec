@@ -122,7 +122,7 @@ Dokumentacja API modułu Pythona alembic.
 
 %prep
 %setup -q -n alembic-%{version}
-%patch0 -p1
+%patch -P 0 -p1
 
 %build
 %if %{with python2}
