@@ -10,7 +10,7 @@ Summary(pl.UTF-8):	Narzędzie do migracji baz danych dla SQLAlchemy
 Name:		python-alembic
 # keep 1.6.x here for python2 support
 Version:	1.6.5
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/alembic/
